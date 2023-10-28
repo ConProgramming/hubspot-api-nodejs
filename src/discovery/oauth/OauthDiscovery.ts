@@ -1,4 +1,3 @@
-import * as qs from 'querystring'
 import {
   AccessTokensApi,
   createConfiguration,
@@ -59,6 +58,6 @@ export default class OauthDiscovery {
       delete params.state
     }
 
-    return `https://app.hubspot.com/oauth/authorize?${qs.stringify(params)}`
+    return `https://app.hubspot.com/oauth/authorize?${new URLSearchParams(params).toString()}`
   }
 }
